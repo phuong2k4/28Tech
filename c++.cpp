@@ -2899,32 +2899,55 @@ using namespace std;
 ////////////////////////////
 //chu so tan cung cua a mu n
 
-char a[1000001],n[1000001];
-int main()
-{
-    cin >> a >> n;
-    int tmp = a[strlen(a)-1]-'0';
-    if(tmp == 0 || tmp ==1 || tmp == 5 || tmp == 6){
-        cout << tmp;
-        return 0;
+// char a[1000001],n[1000001];
+// int main()
+// {
+//     cin >> a >> n;
+//     int tmp = a[strlen(a)-1]-'0';
+//     if(tmp == 0 || tmp ==1 || tmp == 5 || tmp == 6){
+//         cout << tmp;
+//         return 0;
+//     }
+//     int r;
+//     if(strlen(n)==1){
+//         r = n[0]-'0';
+//     }else {
+//         r = (n[strlen(n)-2]-'0')*10+n[strlen(n)-1]-'0';
+//     }
+//     int r2[4] = {6,2,4,8};
+//     int r3[4] = {1,3,9,7};
+//     int r4[4] = {6,4,6,4};
+//     int r7[4] = {1,7,9,3};
+//     int r8[4] = {6,8,4,2};
+//     int r9[4] = {1,9,1,9};
+//     r%=4;
+//     if(tmp == 2)cout << r2[r];
+//     else if(tmp == 3)cout << r3[r];
+//     else if(tmp ==4)cout << r4[r];
+//     else if(tmp ==7)cout << r7[r];
+//     else if(tmp ==8)cout << r8[r];
+//     else if(tmp ==9)cout << r9[r];
+// }
+
+/////////////////////////////////////
+// so chuoi cua so nhi phan
+int powMod(int a,int b){
+    int res = 1;
+    while(b){
+        if(b&1){
+            res *= a;
+            res %= (int)(1e9+7);
+        }
+        a *= a;
+        a %= (int)(1e9+7);
+        b >>= 1;
     }
-    int r;
-    if(strlen(n)==1){
-        r = n[0]-'0';
-    }else {
-        r = (n[strlen(n)-2]-'0')*10+n[strlen(n)-1]-'0';
-    }
-    int r2[4] = {6,2,4,8};
-    int r3[4] = {1,3,9,7};
-    int r4[4] = {6,4,6,4};
-    int r7[4] = {1,7,9,3};
-    int r8[4] = {6,8,4,2};
-    int r9[4] = {1,9,1,9};
-    r%=4;
-    if(tmp == 2)cout << r2[r];
-    else if(tmp == 3)cout << r3[r];
-    else if(tmp ==4)cout << r4[r];
-    else if(tmp ==7)cout << r7[r];
-    else if(tmp ==8)cout << r8[r];
-    else if(tmp ==9)cout << r9[r];
+    return res;
+}
+
+int main(){
+    int b;
+    cin >> b;
+    cout << powMod(2,b);
+    return 0;
 }
