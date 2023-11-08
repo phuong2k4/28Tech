@@ -2931,23 +2931,84 @@ using namespace std;
 
 /////////////////////////////////////
 // so chuoi cua so nhi phan
-int powMod(int a,int b){
-    int res = 1;
-    while(b){
-        if(b&1){
-            res *= a;
-            res %= (int)(1e9+7);
-        }
-        a *= a;
-        a %= (int)(1e9+7);
-        b >>= 1;
-    }
-    return res;
-}
+// int powMod(int a,int b){
+//     int res = 1;
+//     while(b){
+//         if(b&1){
+//             res *= a;
+//             res %= (int)(1e9+7);
+//         }
+//         a *= a;
+//         a %= (int)(1e9+7);
+//         b >>= 1;
+//     }
+//     return res;
+// }
 
-int main(){
-    int b;
-    cin >> b;
-    cout << powMod(2,b);
-    return 0;
-}
+// int main(){
+//     int b;
+//     cin >> b;
+//     cout << powMod(2,b);
+//     return 0;
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//in hinh chu nhat theo yeu cau
+
+// int main(){
+//     int n,m;
+//     cin >> n >> m;
+
+    /*
+        ****
+        ****
+        ****
+        ****
+    */
+
+    // for (int i =1 ;i<=n;i++){
+    //     for (int j = 1 ;j<=n;j++){
+    //         cout << "*";
+    //     }
+    //     cout << endl;
+    // }
+
+    /*  
+        *****
+        *   *
+        *   *
+        *   *
+        *****
+    */
+
+    // for(int i = 1 ;i<=n;i++){
+    //     for (int  j = 1 ; j <= n ; j++){
+    //         if(i==1||i==n ||j==1||j==n){
+    //             cout << "*";
+    //         }
+    //         else{
+    //             cout << " ";
+    //         }
+    //     }
+    //     cout << endl;
+    // }
+
+    /*
+        *****
+        *   *
+        *   *
+        *****
+    */
+
+//     for (int i = 1 ;i<=n;i++){
+//         for(int j = 1;j<=m;j++){
+//             if(i==1||i==n||j==1||j==m){
+//                 cout<< "*";
+//             }else{
+//                 cout<< " ";
+//             }
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
