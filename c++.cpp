@@ -3280,9 +3280,9 @@ using namespace std;
 
 
 
-int main(){
-    int n;
-    cin >> n;
+// int main(){
+//     int n;
+//     cin >> n;
 
     /*
         *
@@ -3427,28 +3427,263 @@ int main(){
         ~~~~*****
     */
 
-   for(int i =1 ;i<=n ;i++)
-   {
-        for (int j = 1 ;j<= n-i;j++)
-        {
-            cout << "~";
-        }
-        for(int j =1 ;j<= n-i+1;j++)
-        {
-            cout << "*";
-        }
-        cout <<endl;
-   }
-   for(int i = n-1;i>=1;--i)
-   {
-        for (int j = 1 ;j<= n-i;j++)
-        {
-            cout << "~";
-        }
-        for(int j =1 ;j<= n-i+1;j++)
-        {
-            cout << "*";
-        }
-        cout <<endl; 
-   }
-}
+//    for(int i =1 ;i<=n ;i++)
+//    {
+//         for (int j = 1 ;j<= n-i;j++)
+//         {
+//             cout << "~";
+//         }
+//         for(int j =1 ;j<= n-i+1;j++)
+//         {
+//             cout << "*";
+//         }
+//         cout <<endl;
+//    }
+//    for(int i = n-1;i>=1;--i)
+//    {
+//         for (int j = 1 ;j<= n-i;j++)
+//         {
+//             cout << "~";
+//         }
+//         for(int j =1 ;j<= n-i+1;j++)
+//         {
+//             cout << "*";
+//         }
+//         cout <<endl; 
+//    }
+
+    /*
+        10101
+        01010
+        10101
+        01010
+        10101
+    */
+    
+    // for (int i = 1 ;i<=n ;i++)
+    // {
+    //     for(int j =1 ;j<=n;j++)
+    //     {
+    //         if((i+j)%2==0){
+    //             cout << "1";
+    //         }else{
+    //             cout << "0";
+    //         }
+    //     }
+    //     cout << endl;
+    // }
+
+    /*
+        12345
+        23456
+        34567
+        45678
+        56789
+    */
+
+//    for(int i =1 ;i<=n;i++)
+//    {
+//     int cnt = 1;
+//         for(int j =1 ;j<=n;j++)
+//         {
+//             cout << cnt ;
+//             cnt++;
+//         }
+//         cout << endl;
+//    }
+
+    /*
+        12345
+        678910
+        1112131415
+        1617181920
+        2122232425
+    */
+
+//    int cnt=1;
+//    for(int i =1 ;i<=n ;i++)
+//    {
+//         for(int j= 1 ;j<=n;j++)
+//         {
+//             cout << cnt;
+//             cnt++;
+//         }
+//         cout << endl;
+//    }
+
+    /*
+        ~~~~1
+        ~~~22
+        ~~333
+        ~4444
+        55555
+    */
+
+//    for (int i =1 ;i<= n;i++){
+//         for (int j = 1;j<= n-i;j++)
+//         {
+//             cout << "~";
+//         }
+//         for(int j =1;j<= i;j++)
+//         {
+//             cout << i;
+//         }
+//         cout << endl;
+//    }
+   
+   /*
+        1
+        2 6
+        3 7 10
+        4 8 11 13
+        5 9 12 14 15
+   */
+
+//   for (int i =1 ;i<=n ;i++)
+//   {
+//         int init = i;
+//         int cnt = n-1;
+//         for(int j =1 ;j<=i;j++)
+//         {
+//             cout << init << " ";
+//             init +=cnt;
+//             // init += n-j;
+//             cnt--;
+//         }
+//         cout << endl;
+//   }
+
+    /*
+        4444444
+        4333334
+        4322234
+        4321234
+        4322234
+        4333334
+        4444444
+    */
+// int min(int a,int b){
+//     if(a<b)return a;
+//     return b;
+// }
+// int main(){
+//     int n;
+//     cin >> n;
+//     for(int i =1 ;i<=2*n-1;i++)
+//     {
+//         for(int j =1 ;j<= 2*n-1;j++)
+//         {
+//             int check = min(min(i-1,2*n-1-i),min(j-1,2*n-1-j));
+//             cout << n-check;
+//         }
+//     cout <<endl;
+//     }
+// }
+
+
+
+/*
+    5 5 5 5 5
+    5 4 4 4 4
+    5 4 3 3 3
+    5 4 3 2 2 
+    5 4 3 2 1
+*/
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     for(int i =1 ;i<=n;i++)
+//     {
+//         int init = n;
+//         for(int j=1;j<=n;j++)
+//         {
+//             if(j<i){
+//                 cout << init--;
+//             }else{
+//                 cout << init;
+//             }
+//         }
+//         cout << endl;
+//     }
+// }
+
+
+/*
+    1 2 3 4 5
+    2 1 2 3 4
+    3 2 1 2 3 
+    4 3 2 1 2
+    5 4 3 2 1
+*/
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     for(int i =1 ;i<= n;i++)
+//     {
+//         int cnt = i;
+//         for(int j = 1 ;j<=n;j++)
+//         {
+//             if(j<i)
+//             {
+//                 cout<< cnt--;
+//             }else{
+//                 cout << cnt++;
+//             }
+//         }
+//         cout <<endl;
+//     }
+// }
+
+/*
+    12345
+    22345
+    33345
+    44445
+    55555
+*/
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     for(int i =1 ;i<=n;i++)
+//     {
+//         int cnt = i;
+//         for(int j =1 ;j<=n;j++)
+//         {
+//             if(j>i){
+//                 cout << ++cnt;
+//             }else{
+//                 cout << cnt;
+//             }
+//         }
+//         cout <<endl;
+//     }
+// }
+
+/*
+    12345
+    23455
+    34555
+    45555
+    55555
+*/
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     for(int i =1 ;i<=n ;i++)
+//     {
+//         int cnt = i;
+//         for(int j = 1;j<=n;j++)
+//         {
+//             if(j<=n-i){
+//                 cout << cnt++;
+//             }else{
+//                 cout<< cnt;
+//             }
+//         }
+//         cout << endl;
+//     }
+// }
