@@ -3776,19 +3776,19 @@ using namespace std;
     56 67 79 92 106
 */
 
-int main()
-{
-    int n;
-    cin >> n;
-    int cnt =1,kc = 1;
-    for(int i =1;i<=n;i++)
-    {
-        for(int j = 1;j<=i;j++)
-        {
-            cout << cnt << " ";
-            cnt +=kc;
-            ++kc;
-        }
-        cout << endl;
-    }
-}
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     int cnt =1,kc = 1;
+//     for(int i =1;i<=n;i++)
+//     {
+//         for(int j = 1;j<=i;j++)
+//         {
+//             cout << cnt << " ";
+//             cnt +=kc;
+//             ++kc;
+//         }
+//         cout << endl;
+//     }
+// }
