@@ -3687,3 +3687,108 @@ using namespace std;
 //         cout << endl;
 //     }
 // }
+
+
+/*
+    1
+    12
+    123
+    1234
+    12345
+*/
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     for(int i =1 ;i<=n ;i++)
+//     {
+//         for(int j =1 ;j<=i;j++){
+//             cout << j;
+//         }
+//         cout << endl;
+//     }
+// }
+
+
+/*
+    ~~~~2
+    ~~~242
+    ~~24642
+    ~2468642
+    2468108642
+*/
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     for (int i =1 ;i<=n ;i++)
+//     {
+//         int cnt = 2;
+//         for (int j =1 ;j<=n-i;j++){
+//             cout << "~";
+//         }
+//         for(int j = 1 ;j<=2*i-1;j++){
+//             if(j<i){
+//                 cout << cnt;
+//                 cnt+=2;
+//             }else{
+//                 cout << cnt;
+//                 cnt-=2;
+//             }
+//         }
+//         cout << endl;
+//     }
+// }
+
+/*
+    1
+    3 2
+    4 5 6
+    10 9 8 7
+
+    chan: i*(i+1)/2
+    le: i*(i+1)/2-i+1
+*/
+
+// int main (){
+//     int n;
+//     cin >> n;
+//     for(int i =1 ;i<= n;i++)
+//     {
+//         int cnt; 
+//         if(i%2==0) cnt = i*(i+1)/2;
+//         else cnt = i*(i+1)/2-i+1;
+//         for(int j = 1 ;j<=i;j++)
+//         {
+//             if(i%2==0)cout << cnt--;
+//             else cout << cnt++;
+//         }
+//         cout << endl;
+//     }
+// }
+
+/*
+    1
+    2 4
+    7 11 16
+    22 29 37 46
+    56 67 79 92 106
+*/
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     int cnt =1,kc = 1;
+//     for(int i =1;i<=n;i++)
+//     {
+//         for(int j = 1;j<=i;j++)
+//         {
+//             cout << cnt << " ";
+//             cnt +=kc;
+//             ++kc;
+//         }
+//         cout << endl;
+//     }
+// }
