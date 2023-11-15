@@ -34,4 +34,24 @@ using namespace std;
 //     return 0;
 // }
 
-
+int cnt[1000002];
+int main(){
+    int tc; cin >> tc;
+    while (tc --){
+        int n;
+        cin >> n;
+        memset(cnt, 0 ,sizeof(cnt));
+        for(int i = 0;i<n;i++){
+            int x;cin >> x;
+            if(x>0)cnt[x] = 1;
+        }
+        for(int i = 1 ;i<= 1000001;i++){
+            if(cnt[i]==0){
+                cout<< i << " ";
+                break;
+            }
+        }
+        cout << endl;
+    }
+    return 0;
+}
