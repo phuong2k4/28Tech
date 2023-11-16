@@ -3792,3 +3792,35 @@ using namespace std;
 //         cout << endl;
 //     }
 // }
+
+/*
+    1234
+    2341
+    3421
+    4321
+*/
+
+int check(int a ,int b){
+    return a<b ? a:b;
+}
+int main(){
+    int a,b;
+    cin >> a >> b;
+    for (int i = 1; i<=a;i++)
+    {
+        cout << i;
+        for(int j =1 ;j<=a ;j++)
+        {
+            if(j<=b-i){
+                cout << i+j;
+            }else{
+                int init = check(i-1,b-1);
+                while(j<b){
+                    cout << init--;++j;
+                }
+            }
+        }
+        cout <<endl;
+    }
+    return 0;
+}
