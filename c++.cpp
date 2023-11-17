@@ -3873,20 +3873,20 @@ using namespace std;
     4321      432123
 */
 
-    int main (){
-        int n,m;
-        cin >> n >> m;
-        for(int i =1 ;i<=n;i++){
-            int init = i;
-            for(int j = 1;j<=m;j++)
-            {
-                if(j<i)cout << init--;
-                else cout << init++;
-            }
-            cout << endl;
-        }
-        return 0;
-    }
+    // int main (){
+    //     int n,m;
+    //     cin >> n >> m;
+    //     for(int i =1 ;i<=n;i++){
+    //         int init = i;
+    //         for(int j = 1;j<=m;j++)
+    //         {
+    //             if(j<i)cout << init--;
+    //             else cout << init++;
+    //         }
+    //         cout << endl;
+    //     }
+    //     return 0;
+    // }
 
 /*
     4321    654321
