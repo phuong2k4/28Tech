@@ -3800,27 +3800,133 @@ using namespace std;
     4321
 */
 
-int check(int a ,int b){
-    return a<b ? a:b;
-}
-int main(){
-    int a,b;
-    cin >> a >> b;
-    for (int i = 1; i<=a;i++)
-    {
-        cout << i;
-        for(int j =1 ;j<=a ;j++)
-        {
-            if(j<=b-i){
-                cout << i+j;
-            }else{
-                int init = check(i-1,b-1);
-                while(j<b){
-                    cout << init--;++j;
-                }
+// int min(int a ,int b){
+//     return a<b ? a:b;
+// }
+
+// int main()
+// {
+//     int n,m;
+//     cin >> n >> m;
+//     for(int i =1;i<=n;i++)
+//     {
+//         cout << i;
+//         for(int j = 1 ;j<=m;j++)
+//         {
+//             if (j<=m-i)
+//             {
+//                 /* code */
+//                 cout << i+j;
+//             }else{
+//                 int init = min(i-1,m-1);
+//                 while(j<m){
+//                     cout << init--;
+//                     j++;
+//                 }
+//             }
+            
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+/*
+    123
+    232
+    321
+    432
+    543
+*/
+
+// int max(int a,int b){
+//     if(a>b){
+//         return a;
+//     }return b;
+// }
+// int main(){
+//     int n,m;
+//     cin >> n >>m;
+//     for(int i =1 ;i<=n ;i++)
+//     {
+//         cout << i;
+//         for(int j =1 ;j<=m;j++){
+//             if(j<=m-i){
+//                 cout << i+j;
+//             }else{
+//                 int init = max(i-1,m-1);
+//                 while(j<m){
+//                     cout << init--;
+//                     j++;
+//                 }
+//             }
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+/*
+    1234      123456
+    2123      212345
+    3212      321234
+    4321      432123
+*/
+
+    int main (){
+        int n,m;
+        cin >> n >> m;
+        for(int i =1 ;i<=n;i++){
+            int init = i;
+            for(int j = 1;j<=m;j++)
+            {
+                if(j<i)cout << init--;
+                else cout << init++;
             }
+            cout << endl;
         }
-        cout <<endl;
+        return 0;
     }
-    return 0;
-}
+
+/*
+    4321    654321
+    3212    543212
+    2123    432123
+    1234    321234
+*/
+// int main(int argc,string argv){
+//     int tc;
+//     cin >> tc;
+//     while(tc--){
+//         int n,m;
+//         cin >> n >>m;
+//         if(n>=m){
+//         for(int i = n;i>=1;i--){
+//             int init = i;
+//             for(int j =1 ;j<=m;j++){
+//                 if(j<i){
+//                     cout << init--;
+//                 }else{
+//                     cout << init++;
+//                 }
+//             }
+//             cout <<endl;
+//         }
+//         }else{
+//             for(int i =1 ;i<=n;i++){
+//                 int init = m - i + 1;
+//                 for(int j =1 ;j<=m;j++)
+//                 {
+//                     if(j<=m-i){
+//                         cout << init--;
+//                     }else{
+//                         cout << init++;
+//                     }
+//                 }
+//                 cout << endl;
+//             }
+//         }
+
+//     }
+//     return 0;
+// }
