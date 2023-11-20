@@ -3930,3 +3930,95 @@ using namespace std;
 //     }
 //     return 0;
 // }
+
+/*
+    DDDD        CDEEE
+    CDDD        BCDEE
+    BCDD        ABCDE
+    ABCD
+*/
+
+// int main(){
+//     int n,m;
+//     cin >> n>>m;
+//     if(n<=m){
+//     for(int i = n ;i>=1;--i)
+//     {
+//         int init = min(i,m);
+//         for(int j =1 ;j<=m;j++)
+//         {
+//             if(j<=m-i){
+//                 cout << (char)(64+init++);
+//             }else{
+//                 cout << (char)(64+init);
+//             }
+//         }
+//         cout << endl;
+//     }
+//     }
+//     return 0;
+// }
+
+/*
+    @ABC
+    ABCC
+    BCCC
+    CCCC
+*/
+
+// int main()
+// {
+//     int n,m;
+//     cin >> n >> m;
+//     for (int i = 1; i <= n; i++)
+//     {
+//         /* code */
+//         int init = min(i,m);
+//         for (int j = 1; j <= m; j++)
+//         {
+//             /* code */
+//             if(j<=m-i){
+//                 cout << (char)(63 + init++);
+//             }else{
+//                 cout << (char)(63 + init);
+//             }
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+/*
+    ABCD
+    BCDA
+    CDBA
+    DCBA
+*/
+
+int min(int a,int b)
+{
+    return a < b ? a : b;
+}
+int main()
+{
+    int n,m;
+    cin >> n >> m;
+    for(int i =1 ;i<=n ;i++)
+    {
+        int init = min(i,m);
+        for(int j =1 ;j<=m;j++){
+            if(j<=m-i+1){
+                cout << (char)(64+(i+j-1));
+            }else{
+                    if(m<i){
+                        cout << (char)(64+init--);
+                    }else{
+                        cout << (char)(64 + --init);
+                    }
+            }
+        }
+        cout << endl;
+    }
+    return 0;
+}
