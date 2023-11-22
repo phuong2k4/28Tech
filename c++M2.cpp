@@ -111,21 +111,56 @@ using namespace std;
 //     return 0;
 // }
 
+// Cho mang a[n] n phan tu 
+// tim k lon nhat cua mang cac phan tu dua theo thu tu giam dan
+// ex: 10 7 9 12 6 => n = 3  => 12 10 7 
+// int main(){
+//     int tc;
+//     cin >> tc;
+//     while(tc--){
+//         int n,k;
+//         cin >> n >> k;
+//         int a[n];
+//         for(int i = 0 ;i<n;i++){
+//             cin >> a[i];
+//         }
+//         sort(a,a+n,greater<int>());
+//         for(int i =0;i<k;i++){
+//             cout << a[i] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
 
-int main(){
+// Cho mang A[n] n phan tu 
+// Dem so phan tu lap lai it nhat 1 lan 
+// EX: 4 5 1 2 1 => cout << 2;
+
+int cnt[1000001];
+int main()
+{
     int tc;
     cin >> tc;
     while(tc--){
-        int n,k;
-        cin >> n >> k;
+        int n;
+        cin >> n;
         int a[n];
-        for(int i = 0 ;i<n;i++){
+        // map<int,int> mp;
+        memset(cnt ,0,sizeof(cnt));
+        for(int i = 0;i<n;i++){
             cin >> a[i];
+            cnt[a[i]]++;
+            // mp[a[i]]++;
         }
-        sort(a,a+n,greater<int>());
-        for(int i =0;i<k;i++){
-            cout << a[i] << " ";
+        int ans = 0;
+        for(int i = 0;i<n;i++)
+        {
+            if(cnt[a[i]]==2){
+                ans++;
+            }
         }
+        cout << ans;
         cout << endl;
     }
     return 0;

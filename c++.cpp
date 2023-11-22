@@ -4024,21 +4024,190 @@ using namespace std;
 // }
 
 
-int main()
-{
-    int n,m;
-    cin >> n >> m;
-    for(int i =1;i<=n;i++)
-    {
-        int init = min(n,m);
-        for(int j  =1 ;j<=m;j++)
-        {
-            if (j<i){
-                cout << (char)(96+init--);
+
+/*
+    dddd
+    dccc
+    dcbb
+    dcba
+*/
+// int main()
+// {
+//     int n,m;
+//     cin >> n >> m;
+//     for(int i =1;i<=n;i++)
+//     {
+//         int init = min(n,m);
+//         for(int j  =1 ;j<=m;j++)
+//         {
+//             if (j<i){
+//                 cout << (char)(96+init--);
+//             }
+//             else{
+//                 cout << (char)(96+ init);
+//             }
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+
+/*
+    a
+    c b
+    d e f
+    j i h g
+*/
+// int main(){
+//     int n;
+//     cin >> n;
+//     for(int i =1;i<=n;i++)
+//     {
+//         int cnt;
+//         if(i%2==0){
+//             cnt = i*(i+1)/2;
+//         }else{
+//             cnt = i*(i+1)/2-i+1;
+//         }
+        
+//         for(int j =1 ;j<=i;j++){
+//             if(i%2==0){
+//                 cout << (char)(96 + cnt--);
+//             }else{
+//                 cout << (char)(96 + cnt++);
+//             }
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+/*
+    @
+    @B@
+    @BDB@
+    @BDFDB@
+    @BDFHFDB@
+*/
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     for(int i = 1 ;i<=n ;i++)
+//     {
+//         int cnt = 0;
+//         for(int j = 1 ;j<= 2*i-1;j++)
+//         {
+//             if(j<i){
+//                 cout << (char)(64 + cnt);
+//                 cnt+=2;
+//             }else{
+//                 cout << (char)(64+ cnt);
+//                 cnt-=2;
+//             }
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+/*
+    ACEG
+    CEG
+    EG
+    G
+*/
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     for(int i = 1;i<=n;i++)
+//     {
+//         int cnt = 2*i-1;
+//         for(int j =n-i+1;j>=1;j--)
+//         {
+//             if(j<=n-i+1){
+//                 cout << (char)(64 + cnt);
+//                 cnt+=2;
+//             }
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+/*
+    CDEF
+    BCD
+    AB
+    @
+*/
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     for(int i = n;i>=1;i--){
+//         cout << (char)(63 + i);
+//         for(int j = 1;j<=i-1;j++){
+//             cout << (char)(63 + i+j);
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+/*
+        A
+      B A B
+    C B A B C
+*/
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     for(int i =1 ;i<=n ;i++){
+//         for(int j = 1;j<= n-i;j++){
+//             cout << " ";
+//         }
+//         int cnt = i;
+//         for(int j = 1 ;j<=2*i-1;j++){
+//             if(j<i){
+//                 cout << (char)(64 + cnt--);
+//             }else{
+//                 cout << (char)(64+ cnt++);
+//             }
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+/*
+    a
+    B c
+    D e F
+    g H i J
+    k L m N o
+*/
+
+int main(){
+    int n;
+    cin >> n;
+    int cnt = 0;
+    for(int i =1 ;i<=n;i++){
+
+        for(int j = 1 ;j<=i;j++){
+            if(cnt%2==0){
+                cout << (char)(97 + cnt);
+            }else{
+                cout << (char)(97 + cnt-32);
             }
-            else{
-                cout << (char)(96+ init);
-            }
+            ++cnt;
         }
         cout << endl;
     }
