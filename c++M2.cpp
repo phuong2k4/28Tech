@@ -137,31 +137,58 @@ using namespace std;
 // Dem so phan tu lap lai it nhat 1 lan 
 // EX: 4 5 1 2 1 => cout << 2;
 
-int cnt[1000001];
-int main()
-{
+// int cnt[1000001];
+// int main()
+// {
+//     int tc;
+//     cin >> tc;
+//     while(tc--){
+//         int n;
+//         cin >> n;
+//         int a[n];
+//         // map<int,int> mp;
+//         memset(cnt ,0,sizeof(cnt));
+//         for(int i = 0;i<n;i++){
+//             cin >> a[i];
+//             cnt[a[i]]++;
+//             // mp[a[i]]++;
+//         }
+//         int ans = 0;
+//         for(int i = 0;i<n;i++)
+//         {
+//             if(cnt[a[i]]==2){
+//                 ans++;
+//             }
+//         }
+//         cout << ans;
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+// tinh toan gia tri da thuc p(n,x) = An-1*x^n-1+An-2*x^n-2+...+Ao
+// Ket qua co the rat lon nen hay chia du cho 7
+
+const int MOD = 1000000007;
+int main(){
     int tc;
     cin >> tc;
     while(tc--){
-        int n;
-        cin >> n;
+        int n,x;
+        cin >> n >> x;
         int a[n];
-        // map<int,int> mp;
-        memset(cnt ,0,sizeof(cnt));
         for(int i = 0;i<n;i++){
             cin >> a[i];
-            cnt[a[i]]++;
-            // mp[a[i]]++;
         }
-        int ans = 0;
-        for(int i = 0;i<n;i++)
-        {
-            if(cnt[a[i]]==2){
-                ans++;
-            }
+        long long lt =1, res = 0;
+        for(int i = n-1;i>=0;i--){
+            res += a[i]*lt;
+            res %= MOD;
+            lt *= x;
+            lt %= MOD;
         }
-        cout << ans;
-        cout << endl;
+        cout << res << endl;
     }
     return 0;
 }

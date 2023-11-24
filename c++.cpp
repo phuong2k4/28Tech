@@ -4195,21 +4195,55 @@ using namespace std;
     k L m N o
 */
 
-int main(){
-    int n;
-    cin >> n;
-    int cnt = 0;
-    for(int i =1 ;i<=n;i++){
+// int main(){
+//     int n;
+//     cin >> n;
+//     int cnt = 0;
+//     for(int i =1 ;i<=n;i++){
 
-        for(int j = 1 ;j<=i;j++){
-            if(cnt%2==0){
-                cout << (char)(97 + cnt);
-            }else{
-                cout << (char)(97 + cnt-32);
-            }
-            ++cnt;
-        }
-        cout << endl;
+//         for(int j = 1 ;j<=i;j++){
+//             if(cnt%2==0){
+//                 cout << (char)(97 + cnt);
+//             }else{
+//                 cout << (char)(97 + cnt-32);
+//             }
+//             ++cnt;
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+bool is_lower(char c)
+{
+    return c >= 'a' && c <= 'z';
+}
+bool is_upper(char c)
+{
+    return c >= 'A' && c <= 'Z';
+}
+bool is_alpha(char c){
+    return is_lower(c) || is_upper(c);
+}
+bool is_digit(char c){
+    return c >= '0' && c <= '9';
+}
+char to_lower(char c){
+    return is_upper(c) ? c + 32 : c;
+}
+char to_upper(char c){
+    return is_lower(c) ? c - 32 : c;
+}
+int main(){
+    char c;
+    cin >> c;
+    if(is_alpha(c)){
+        cout << "Yes";
+    }else{
+        cout << "No";
     }
+    cout << to_lower(c);
     return 0;
 }
