@@ -181,12 +181,12 @@ int main(){
         for(int i = 0;i<n;i++){
             cin >> a[i];
         }
-        long long lt =1, res = 0;
-        for(int i = n-1;i>=0;i--){
-            res += a[i]*lt;
-            res %= MOD;
+        int res = 0,lt = 1;
+        for(int i = 1;i<=n;i++){
+            res += a[n-i] * lt;
+            res %=MOD;
             lt *= x;
-            lt %= MOD;
+            lt %=MOD;
         }
         cout << res << endl;
     }
