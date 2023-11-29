@@ -196,108 +196,108 @@ using namespace std;
 //cho mang A[n phan tu] 
 // tim day con lon nhat chi toan so fibonacci
 
-// int f[100001];
+int f[100001];
 
-// void check(){
-//     int fibo[20];
-//     fibo[0]= 0;fibo[1]=1;
-//     for (int i = 2; i <= 19 ; i++){
-//         fibo[i] = fibo[i-1] + fibo[i-2];
-//     }
-//     for(int i = 0 ;fibo[i] <= 1000;i++){
-//         f[fibo[i]]=1;
-//     }
-// }
+void check(){
+    int fibo[20];
+    fibo[0]= 0;fibo[1]=1;
+    for (int i = 2; i <= 19 ; i++){
+        fibo[i] = fibo[i-1] + fibo[i-2];
+    }
+    for(int i = 0 ;fibo[i] <= 1000;i++){
+        f[fibo[i]]=1;
+    }
+}
 
-// int main(){
-//     check();
-//     int tc;
-//     cin >> tc;
-//     while(tc--){
-//         int n;
-//         cin >> n;
-//         int a[n];
-//         for (int i = 0; i < n; i++)
-//         {
-//             /* Nhap gia tri cho mang */
-//             cin >> a[i];
-//         }
-//         for(int i = 0 ;i<n;i++){
-//             if(f[a[i]]==1){
-//                 cout << a[i] << " ";
-//             }
-//         }
-//         cout << endl;
-//     }
-//     return 0;
-// }
+int main(){
+    check();
+    int tc;
+    cin >> tc;
+    while(tc--){
+        int n;
+        cin >> n;
+        int a[n];
+        for (int i = 0; i < n; i++)
+        {
+            /* Nhap gia tri cho mang */
+            cin >> a[i];
+        }
+        for(int i = 0 ;i<n;i++){
+            if(f[a[i]]==1){
+                cout << a[i] << " ";
+            }
+        }
+        cout << endl;
+    }
+    return 0;
+}
 
 
 //cho mang A[n] 
 // Hieu lon nhat cua cap phan tu dung thu tu
 // So lon hon xuat hien sau so nho hon va hieu cua chung nho nhat
 
-// int main(){
-//     int tc;
-//     cin >> tc;
-//     while(tc--){
-//         int n;
-//         cin >> n;
-//         int a[n];
-//         for(int i= 0;i<n;i++){
-//             cin >> a[i];
-//         }
-//         int min_val = a[0], res = -1e9;
-//         for (int i= 1;i<n;i++){
-//             if(a[i]>min_val){
-//                 res = max(res, a[i] - min_val);
-//             }
-//             min_val = min(a[i],min_val);
-//         }
-//         if(res == -1e9) cout << "-1\n";
-//         else cout << res << " ";
-//     }
-//     return 0;
-// }
+int main(){
+    int tc;
+    cin >> tc;
+    while(tc--){
+        int n;
+        cin >> n;
+        int a[n];
+        for(int i= 0;i<n;i++){
+            cin >> a[i];
+        }
+        int min_val = a[0], res = -1e9;
+        for (int i= 1;i<n;i++){
+            if(a[i]>min_val){
+                res = max(res, a[i] - min_val);
+            }
+            min_val = min(a[i],min_val);
+        }
+        if(res == -1e9) cout << "-1\n";
+        else cout << res << " ";
+    }
+    return 0;
+}
 
 
 // cho mang A[] n phan tu va so nguyen duong k
 // tim day con lien tuc do dai k co gia tri trung binh cac phan tu lon nhat
 // VD: [1 12 -5 -6 50 3] k=4 => {12 -5 -6 50} / 4 = 7.75
 
-// int main(){
-//     int tc;
-//     cin >> tc;
-//     while(tc--){
-//         int n,k;
-//         cin >> n >> k;
-//         int a[n];
-//         for(int i = 0;i<n;i++){
-//             cin >> a[i];
-//         }
-//         int sum = 0;
-//         for(int i =0;i<k;i++){
-//             sum += a[i];
-//         }
-//         int res = sum,idx =0;
-//         for (int i = k; i < n; i++)
-//         {
-//             /* code */
-//             sum  = sum - a[i-k]+a[i];
-//             if(sum > res){
-//                 res = sum;
-//                 idx = i-k+1;
-//             }
-//         }
-//         for (int i = 0; i < k; i++)
-//         {
-//             /* code */
-//             cout << a[idx + i] << " ";
-//         }
-//         cout << endl;
-//     }
-//     return 0;
-// }
+int main(){
+    int tc;
+    cin >> tc;
+    while(tc--){
+        int n,k;
+        cin >> n >> k;
+        int a[n];
+        for(int i = 0;i<n;i++){
+            cin >> a[i];
+        }
+        int sum = 0;
+        for(int i =0;i<k;i++){
+            sum += a[i];
+        }
+        int res = sum,idx =0;
+        for (int i = k; i < n; i++)
+        {
+            /* code */
+            sum  = sum - a[i-k]+a[i];
+            if(sum > res){
+                res = sum;
+                idx = i-k+1;
+            }
+        }
+        for (int i = 0; i < k; i++)
+        {
+            /* code */
+            cout << a[idx + i] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
 
 // so nho nhat lon hon a[i] 
 // A[] n phan tu 
