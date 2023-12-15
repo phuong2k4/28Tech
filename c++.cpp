@@ -4,6 +4,8 @@
 #include<string>
 #include<string.h>
 #include<math.h>
+#include<ctype.h>
+#include<stdlib.h>
 
 using namespace std;
 
@@ -4215,110 +4217,126 @@ using namespace std;
 // }
 
 //////////////////////////////////////////////////////////////////////////////////////////
+// ham tao, mo rong prototype
 
-bool is_lower(char c)
-{
-    return c >= 'a' && c <= 'z';
-}
+// bool is_lower(char c)
+// {
+//     return c >= 'a' && c <= 'z';
+// }
 
-bool is_upper(char c)
-{
-    return c >= 'A' && c <= 'Z';
-}
+// bool is_upper(char c)
+// {
+//     return c >= 'A' && c <= 'Z';
+// }
 
-bool is_alpha(char c){
-    return is_lower(c) || is_upper(c);
-}
+// bool is_alpha(char c){
+//     return is_lower(c) || is_upper(c);
+// }
 
-bool is_digit(char c){
-    return c >= '0' && c <= '9';
-}
+// bool is_digit(char c){
+//     return c >= '0' && c <= '9';
+// }
 
-char to_lower(char c){
-    return is_upper(c) ? c + 32 : c;
-}
+// char to_lower(char c){
+//     return is_upper(c) ? c + 32 : c;
+// }
 
-char to_upper(char c){
-    return is_lower(c) ? c - 32 : c;
-}
+// char to_upper(char c){
+//     return is_lower(c) ? c - 32 : c;
+// }
 
-int strlen(char c[]){
-    int cnt = 0;
-    while(c[cnt] != '\0'){
-        ++cnt;
-    }
-    return cnt;
-}
+// int strlen(char c[]){
+//     int cnt = 0;
+//     while(c[cnt] != '\0'){
+//         ++cnt;
+//     }
+//     return cnt;
+// }
 
-char* strlwr(char c[]){
-    for(int i = 0 ;i<strlen(c);i++){
-        if(c[i] >= 'A' && c[i] <='Z'){
-            c[i] += 32;
-        }
-    }
-    return c;
-}
+// char* strlwr(char c[]){
+//     for(int i = 0 ;i<strlen(c);i++){
+//         if(c[i] >= 'A' && c[i] <='Z'){
+//             c[i] += 32;
+//         }
+//     }
+//     return c;
+// }
 
-char* strupr(char c[]){
-    for(int i = 0 ;i<strlen(c);i++){
-        if(c[i] >= 'a' && c[i] <='z'){
-            c[i] -= 32;
-        }
-    }
-    return c;
-}
+// char* strupr(char c[]){
+//     for(int i = 0 ;i<strlen(c);i++){
+//         if(c[i] >= 'a' && c[i] <='z'){
+//             c[i] -= 32;
+//         }
+//     }
+//     return c;
+// }
 
-int strcmp(char a[],char b[]){
-    for(int i = 0;i<min(strlen(a),strlen(b));i++){
-        if(a[i] != b[i]){
-            if(a[i] > b[i]){
-                return 1;
-            }else{
-                return -1;
-            }
-    }
-    }
-    if(strlen(a) == strlen(b)){
-        return 0;
-    }else if(strlen(a) > strlen(b)){
+// int strcmp(char a[],char b[]){
+//     for(int i = 0;i<min(strlen(a),strlen(b));i++){
+//         if(a[i] != b[i]){
+//             if(a[i] > b[i]){
+//                 return 1;
+//             }else{
+//                 return -1;
+//             }
+//     }
+//     }
+//     if(strlen(a) == strlen(b)){
+//         return 0;
+//     }else if(strlen(a) > strlen(b)){
+//         return 1;
+//     }else return -1;
+// }
+
+// int strcmpi(char a[],char b[]){
+//     for(int i = 0;i<min(strlen(strlwr(a)),strlen(strlwr(b)));i++){
+//         if(a[i] != b[i]){
+//             if(a[i] > b[i]){
+//                 return 1;
+//             }else return -1;
+//         }
+//     }
+//     if(strlen(a) == strlen(b)) return 0;
+//     else if(strlen(a) > strlen(b)) return 1;
+//     else return -1;
+// }
+
+// long long atoll(char a[]){
+//     int result=0;
+//     for(int i=0;i<strlen(a);i++){
+//         result = result * 10 + a[i] - '0';
+//     }
+//     return result;
+// }
+
+// char* strrev(char c[]){
+//     int l = 0, r = strlen(c)-1;
+//     while(l<r){
+//         char temp = c[l];
+//         c[l] = c[r];
+//         c[r] = temp;
+//         l++;r--;
+//     }
+//     return c;
+// }
+// int main(){
+//     char c[100],s[100];
+//     cin >> c >> s;
+//     cout << strrev(c);
+//     return 0;
+// }
+
+
+int strcmp (char c[],char d[]){
+    if(strlen(c) < strlen(d)){
+        return -1;
+    }else if(strlen(c) > strlen(d)){
         return 1;
-    }else return -1;
-}
-
-int strcmpi(char a[],char b[]){
-    for(int i = 0;i<min(strlen(strlwr(a)),strlen(strlwr(b)));i++){
-        if(a[i] != b[i]){
-            if(a[i] > b[i]){
-                return 1;
-            }else return -1;
-        }
     }
-    if(strlen(a) == strlen(b)) return 0;
-    else if(strlen(a) > strlen(b)) return 1;
-    else return -1;
-}
-
-long long atoll(char a[]){
-    int result=0;
-    for(int i=0;i<strlen(a);i++){
-        result = result * 10 + a[i] - '0';
-    }
-    return result;
-}
-
-char* strrev(char c[]){
-    int l = 0, r = strlen(c)-1;
-    while(l<r){
-        char temp = c[l];
-        c[l] = c[r];
-        c[r] = temp;
-        l++;r--;
-    }
-    return c;
+    return 0;
 }
 int main(){
-    char c[100],s[100];
-    cin >> c >> s;
-    cout << strrev(c);
-    return 0;
+    char c[100];
+    gets(c);
+    cout << strlen(c);
 }
